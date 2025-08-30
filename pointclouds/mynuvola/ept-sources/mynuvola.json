@@ -1,0 +1,300 @@
+{
+  "bounds": [
+    -25.222076416015625,
+    -35.52016067504883,
+    -9.45268726348877,
+    35.106300354003906,
+    42.22233200073242,
+    14.869181632995605
+  ],
+  "metadata": {
+    "readers.las": {
+      "comp_spatialreference": "",
+      "compressed": false,
+      "copc": false,
+      "count": 5284856,
+      "creation_doy": 220,
+      "creation_year": 2025,
+      "dataformat_id": 2,
+      "dataoffset": 227,
+      "filesource_id": 0,
+      "global_encoding": 0,
+      "global_encoding_base64": "AAA=",
+      "header_size": 227,
+      "major_version": 1,
+      "maxx": 35.10630035,
+      "maxy": 42.222332,
+      "maxz": 14.86918163,
+      "minor_version": 2,
+      "minx": -25.22207642,
+      "miny": -35.52016068,
+      "minz": -9.452687263,
+      "offset_x": 0,
+      "offset_y": 0,
+      "offset_z": 0,
+      "point_length": 26,
+      "project_id": "00000000-0000-0000-0000-000000000000",
+      "scale_x": 1e-07,
+      "scale_y": 1e-07,
+      "scale_z": 1e-07,
+      "software_id": "PDAL 2.3.0 (ff11ae)",
+      "spatialreference": "",
+      "srs": {
+        "compoundwkt": "",
+        "horizontal": "",
+        "isgeocentric": false,
+        "isgeographic": false,
+        "json": {},
+        "prettycompoundwkt": "",
+        "prettywkt": "",
+        "proj4": "",
+        "units": {
+          "horizontal": "unknown",
+          "vertical": ""
+        },
+        "vertical": "",
+        "wkt": ""
+      },
+      "system_id": "PDAL"
+    }
+  },
+  "path": "/Users/vitodomenicoporcari/Desktop/mynuvola.las",
+  "pipeline": [
+    {
+      "filename": "/Users/vitodomenicoporcari/Desktop/mynuvola.las"
+    }
+  ],
+  "points": 5284856,
+  "schema": [
+    {
+      "count": 5284856,
+      "maximum": 35.106300399999995,
+      "mean": 6.103218387517452,
+      "minimum": -25.2220764,
+      "name": "X",
+      "scale": 1e-07,
+      "size": 4,
+      "stddev": 10.744542284103725,
+      "type": "signed",
+      "variance": 115.44518889489287
+    },
+    {
+      "count": 5284856,
+      "maximum": 42.222332,
+      "mean": 1.6413281395985004,
+      "minimum": -35.5201607,
+      "name": "Y",
+      "scale": 1e-07,
+      "size": 4,
+      "stddev": 17.07111630243631,
+      "type": "signed",
+      "variance": 291.42301181130676
+    },
+    {
+      "count": 5284856,
+      "maximum": 14.8691816,
+      "mean": 2.055811665922831,
+      "minimum": -9.4526873,
+      "name": "Z",
+      "scale": 1e-07,
+      "size": 4,
+      "stddev": 5.186070942589741,
+      "type": "signed",
+      "variance": 26.895331821573645
+    },
+    {
+      "count": 5284856,
+      "maximum": 65021,
+      "mean": 10425.208275682986,
+      "minimum": 0,
+      "name": "Intensity",
+      "size": 2,
+      "stddev": 7094.303947015734,
+      "type": "unsigned",
+      "variance": 50329148.49264302
+    },
+    {
+      "count": 5284856,
+      "maximum": 1,
+      "mean": 1,
+      "minimum": 1,
+      "name": "ReturnNumber",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 1,
+      "mean": 1,
+      "minimum": 1,
+      "name": "NumberOfReturns",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "ScanDirectionFlag",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "EdgeOfFlightLine",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "counts": [
+        {
+          "count": 5284856,
+          "value": 0
+        }
+      ],
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "Classification",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "Synthetic",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "KeyPoint",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "Withheld",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "Overlap",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "ScanAngleRank",
+      "size": 4,
+      "stddev": 0,
+      "type": "float",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "UserData",
+      "size": 1,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "PointSourceId",
+      "size": 2,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    },
+    {
+      "count": 5284856,
+      "maximum": 65280,
+      "mean": 28676.190134224213,
+      "minimum": 0,
+      "name": "Red",
+      "size": 2,
+      "stddev": 13477.781489187752,
+      "type": "unsigned",
+      "variance": 181650593.870292
+    },
+    {
+      "count": 5284856,
+      "maximum": 65280,
+      "mean": 27942.55368168844,
+      "minimum": 0,
+      "name": "Green",
+      "size": 2,
+      "stddev": 13622.971988317475,
+      "type": "unsigned",
+      "variance": 185585365.7944826
+    },
+    {
+      "count": 5284856,
+      "maximum": 65280,
+      "mean": 27185.04057026298,
+      "minimum": 0,
+      "name": "Blue",
+      "size": 2,
+      "stddev": 13166.20327841287,
+      "type": "unsigned",
+      "variance": 173348908.76848978
+    },
+    {
+      "count": 5284856,
+      "maximum": 0,
+      "mean": 0,
+      "minimum": 0,
+      "name": "OriginId",
+      "size": 4,
+      "stddev": 0,
+      "type": "unsigned",
+      "variance": 0
+    }
+  ],
+  "srs": {}
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Potree - Nuvola</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./potree/build/potree/potree.css">
+<link rel="stylesheet" href="./potree/libs/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="./potree/libs/openlayers3/ol.css">
+<link rel="stylesheet" href="./potree/libs/spectrum/spectrum.css">
+<link rel="stylesheet" href="./potree/libs/jstree/themes/mixed/style.css">
+<link rel="stylesheet" href="./potree/libs/perfect-scrollbar/css/perfect-scrollbar.css">
+
+<style>
+  html,body,#potree_render_area,#potree_sidebar_container{
+    width:100%; height:100%; margin:0; padding:0; overflow:hidden;
+  }
+</style>
+</head>
+<body>
+<div class="potree_container" style="position:absolute; inset:0;">
+  <div id="potree_render_area"></div>
+  <div id="potree_sidebar_container"></div>
+</div>
+
+<!-- Librerie (ordine critico) -->
+<script src="./potree/libs/jquery/jquery-3.1.1.min.js"></script>
+<script src="./potree/libs/spectrum/spectrum.js"></script>
+<script src="./potree/libs/jquery-ui/jquery-ui.min.js"></script>
+<script src="./potree/libs/other/BinaryHeap.js"></script>
+<script src="./potree/libs/tween/tween.min.js"></script>
+<script src="./potree/libs/d3/d3.js"></script>
+<script src="./potree/libs/proj4/proj4.js"></script>
+<script src="./potree/libs/openlayers3/ol.js"></script>
+
+<!-- i18n di Potree (file LOCALI, non CDN) -->
+<script src="./potree/libs/i18next/i18next.js"></script>
+<script src="./potree/libs/i18next/i18nextXHRBackend.js"></script>
+<script src="./potree/libs/jquery-i18next/jquery-i18next.min.js"></script>
+
+<script src="./potree/libs/jstree/jstree.js"></script>
+<script src="./potree/libs/plasio/js/laslaz.js"></script>
+
+<!-- Perfect Scrollbar: PLUGIN JQUERY che Potree 1.8 si aspetta -->
+<script src="./potree/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+
+<!-- Potree core -->
+<script src="./potree/build/potree/potree.js"></script>
+
+<script>
+// PERCORSI ASSOLUTI (slash finale)
+const GUI_PATH = new URL('potree/build/potree/', window.location.href).toString();
+const RES_PATH = new URL('potree/build/potree/resources/', window.location.href).toString();
+Potree.scriptPath   = GUI_PATH;
+Potree.resourcePath = RES_PATH;
+
+// Viewer
+const viewer = new Potree.Viewer(document.getElementById('potree_render_area'));
+window.viewer = viewer;
+viewer.setEDLEnabled(true);
+viewer.setFOV(60);
+viewer.setPointBudget(2000000);
+viewer.setBackground('black');
+
+// i18n GUI
+if (window.i18next && window.i18nextXHRBackend && window.jqueryI18next) {
+  i18next.use(i18nextXHRBackend).init({
+    fallbackLng: 'en',
+    debug: false,
+    backend: { loadPath: Potree.resourcePath + 'lang/{{lng}}/{{ns}}.json' }
+  });
+  jqueryI18next.init(i18next, $, { useOptionsAttr: true });
+}
+
+// Carica GUI e apri sidebar
+viewer.loadGUI(function(){ viewer.toggleSidebar(); }, Potree.scriptPath);
+
+// Inizializza Perfect Scrollbar (opzionale: Potree la usa, ma lo forziamo)
+if (typeof $.fn.perfectScrollbar === 'function') {
+  try { $('#potree_sidebar_container').perfectScrollbar(); } catch(e){}
+}
+
+// Carica la nuvola EPT
+const EPT_URL = './pointclouds/mynuvola/ept.json';
+Potree.loadPointCloud(EPT_URL, 'mynuvola', function(evt){
+  const pc = evt.pointcloud;
+  viewer.scene.addPointCloud(pc);
+  pc.material.size = 1;
+  pc.material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
+  viewer.fitToScreen();
+});
+</script>
+</body>
+</html>
